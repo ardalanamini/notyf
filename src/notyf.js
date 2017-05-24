@@ -6,7 +6,8 @@
       var defaults = {
         delay:2000,
         alertIcon:'notyf__icon--alert',
-        confirmIcon:'notyf__icon--confirm' 
+        warnIcon:'notyf__icon--warn',
+        confirmIcon:'notyf__icon--confirm'
       }
 
       if (arguments[0] && typeof arguments[0] == "object"){
@@ -34,6 +35,16 @@
     this.Notyf.prototype.alert = function(alertMessage){
       var card = buildNotificationCard.call(this, alertMessage, this.options.alertIcon);
       card.className += ' notyf--alert';
+      this.container.appendChild(card);
+      this.notifications.push(card);
+    }
+
+    /**
+    * Shows an warn card
+    */
+    this.Notyf.prototype.warn = function(alertMessage){
+      var card = buildNotificationCard.call(this, alertMessage, this.options.alertIcon);
+      card.className += ' notyf--warn';
       this.container.appendChild(card);
       this.notifications.push(card);
     }
