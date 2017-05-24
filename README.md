@@ -9,11 +9,7 @@ Notyf is a dead simple, responsive, vanilla javascript notification plugin. No j
 
 ### npm
 ```
-npm install --save notyf
-```
-### Bower
-```
-bower install --save notyf
+npm install --save notyf-js
 ```
 Now add it to your project:
 ```html
@@ -38,6 +34,9 @@ var notyf = new Notyf();
 
 // Display an alert notification
 notyf.alert('You must fill out the form before moving forward');
+
+// Display a warning notification
+notyf.warn('It's better if you fill out the form before moving forward!');
 
 // Display a success notification
 notyf.confirm('Your changes have been successfully saved!');
@@ -67,6 +66,7 @@ Param | Type | Default | Details
 ------------ | ------------- | ------------- | -------------
 delay | `Number` | 2000 | Number of miliseconds the notification must be shown
 alertIcon | `String` | *Custom Notyf icon* | CSS class of the icon shown in an alert notification
+warnIcon | `String` | *Custom Notyf icon* | CSS class of the icon shown in an warning notification
 confirmIcon | `String` | *Custom Notyf icon* | CSS class of the icon shown in a success notification
 
 This is an example of setting Notyf with a 1s delay and FontAwesome [alert](http://fontawesome.io/icon/exclamation-circle/) and [success](http://fontawesome.io/icon/check-circle-o/) icons (be sure to [include FontAwesome](http://fontawesome.io/get-started/) in your project):
@@ -74,6 +74,7 @@ This is an example of setting Notyf with a 1s delay and FontAwesome [alert](http
 var notyf = new Notyf({
   delay:1000,
   alertIcon: 'fa fa-exclamation-circle',
+  warnIcon: 'fa fa-exclamation-circle',
   confirmIcon: 'fa fa-check-circle'  
 })
 ```

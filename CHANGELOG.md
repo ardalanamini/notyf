@@ -1,3 +1,9 @@
+#2.1.1
+
+###Features
+
+* Added warning card, you can call it like this: `Notyf.warn('massage')`
+
 #2.0.1
 
 ###Features
